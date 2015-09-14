@@ -73,5 +73,17 @@ public class Burner {
   
   public void display() {
     System.out.print("[" + setting.toString() + "].....");
+    String msg = "";
+    switch(temperature) {
+    case COLD:
+    	msg = "cooool";
+    	break;
+    case WARM:
+    	msg = "CAREFUL";
+    	break;
+    case HOT:
+    	msg = "HOT SURFACE! DON'T TOUCH";
+    	break;
+    }
   }
 }
