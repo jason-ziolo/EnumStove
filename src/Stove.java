@@ -18,18 +18,33 @@ import java.util.ArrayList;
 */
 
 public class Stove {
-  ArrayList<Burner> burnerList;
+  private static final int DEFAULT_BURNERS = 4;
+  ArrayList<Burner> burnerList = new ArrayList(DEFAULT_BURNERS);
   
-  public Stove(ArrayList<Burner> burnerList) {
+  public Stove() {
     super();
-    this.burnerList = burnerList;
   }
 
   public void displayStove() {
-    
+    System.out.println("Stove ---------------");
+    for(Burner i : burnerList) {
+    	i.display();
+    }
   }
   
   public static void main(String[] args) {
-    System.out.println("Hello World");
+    Stove stove = new Stove();
+    for(int i = 0; i < DEFAULT_BURNERS; i++) {
+    	stove.burnerList.add(new Burner());
+    }
+    stove.burnerList.get(1).increaseSetting();
+    stove.burnerList.get(2).increaseSetting();
+    stove.burnerList.get(2).increaseSetting();
+    stove.burnerList.get(3).increaseSetting();
+    stove.burnerList.get(3).increaseSetting();
+    stove.burnerList.get(3).increaseSetting();
+    for(int i = 0; i < stove.burnerList.size(); i++) {
+    	stove.burnerList.get(i).display();
+    }
   }
 }

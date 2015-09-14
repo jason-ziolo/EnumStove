@@ -85,5 +85,6 @@ public class Burner {
     	msg = "HOT SURFACE! DON'T TOUCH";
     	break;
     }
+    System.out.print(msg + '\n');
   }
 }
