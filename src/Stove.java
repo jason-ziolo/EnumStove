@@ -27,8 +27,15 @@ public class Stove {
 
   public void displayStove() {
     System.out.println("Stove ---------------");
+    boolean is_hot = false;
     for(Burner i : burnerList) {
     	i.display();
+    	if(!is_hot && i.getTemperature() == 2) {
+    		is_hot = true;
+    	}
+    }
+    if(is_hot) {
+    	System.out.println("RED LIGHT - HOT BURNER ALERT");
     }
   }
   
@@ -37,14 +44,6 @@ public class Stove {
     for(int i = 0; i < DEFAULT_BURNERS; i++) {
     	stove.burnerList.add(new Burner());
     }
-    stove.burnerList.get(1).increaseSetting();
-    stove.burnerList.get(2).increaseSetting();
-    stove.burnerList.get(2).increaseSetting();
-    stove.burnerList.get(3).increaseSetting();
-    stove.burnerList.get(3).increaseSetting();
-    stove.burnerList.get(3).increaseSetting();
-    for(int i = 0; i < stove.burnerList.size(); i++) {
-    	stove.burnerList.get(i).display();
-    }
+    stove.displayStove();
   }
 }

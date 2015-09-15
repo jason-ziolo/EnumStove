@@ -16,6 +16,19 @@ public class Burner {
     this.setting = Setting.OFF;
   }
 
+  public int getTemperature() {
+	switch(temperature) {
+	case COLD:
+		return 0;
+	case WARM:
+		return 1;
+	case HOT:
+		return 2;
+	default:
+		return 0;
+	}
+  }
+  
   public void increaseSetting() {
     timer += 2;
     switch(setting) {
